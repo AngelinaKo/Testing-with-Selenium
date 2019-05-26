@@ -2,6 +2,8 @@ package LearningProject;
 
 
 
+import static org.junit.Assert.assertEquals;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -33,16 +35,7 @@ public class testTM {
 
 	@Then("^I veryfy the title of homepage$")
 	public void iValidatePageTitle() throws Throwable {
-		String actualTitle = driver.getTitle();
-		String expectedTitle = "Toastmasters International -Home";
-		if (actualTitle.contentEquals(expectedTitle)) 
-		{
-			System.out.println("Test Passed");
-		} 
-		else
-		{
-			System.out.println("Failure");
-		}
+		assertEquals(driver.getTitle(), "Toastmasters International -Home");
 	}
 	
 }
